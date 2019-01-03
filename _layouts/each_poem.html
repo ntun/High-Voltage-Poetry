@@ -1,0 +1,35 @@
+---
+layout: poem
+---
+
+<!--{% if x == "a" %}
+<p>{{ page.previous.url }}</p>
+{% else %}
+{% assign links = site[page.collection]  %}
+{% for link in links %}
+<p> {{ links[0].url }} aa</p>
+{% endfor %}
+{% endif %}-->
+
+<h2> {{ page.poem_title }} </h2>
+<h4> by {{ page.poem_author}} </h4>
+
+<div class="poems">{{page.poem_text | newline_to_br }}</div>
+
+<!--{% for s in page.types_incorrect %}
+<p>{{s}}</p>
+{% endfor %}-->
+
+
+<div id={{page.title}}></div>
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="myModal1" role="dialog">
+</div>
+
+<div class="modal fade" id="myModal2" role="dialog">
+</div>
+
+<div id="correct_text" style="display: none;"> {{ page.correct_text }}</div>

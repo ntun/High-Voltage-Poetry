@@ -1,0 +1,11 @@
+---
+layout: poem
+---
+<p> hello </p>
+{% assign sort_poem_by_title = site.poemslist | sort: "title" %}
+{%- for poem in sort_poem_by_title -%}
+<h2> {{ poem.poem_title }} </h2>
+<h3> by {{ poem.poem_author}} </h3>
+
+<p> {{poem.poem_text}}</p>
+{%- endfor -%}

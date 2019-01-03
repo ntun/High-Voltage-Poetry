@@ -1,0 +1,14 @@
+---
+layout: poem
+permalink: /poems/sort/title
+---
+{% assign sort_poem_by_title = site.poemslist | sort: "poem_title" %}
+
+<h3> Poems sorted by title in ascending order alphabetically:</h3>
+<ul>
+{% for poem in sort_poem_by_title %}
+    {% assign link = "/poem/" | append: poem.title %}
+    <li><a href={{link}}>{{ poem.poem_title }}</a>  by {{ poem.poem_author }}</li>
+{% endfor %}
+</ul>
+

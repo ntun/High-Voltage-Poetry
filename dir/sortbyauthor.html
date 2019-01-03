@@ -1,0 +1,34 @@
+---
+layout: poem
+permalink: /poems/sort/author
+---
+{% assign sort_poem_by_title = site.poemslist | sort: "poem_author" %}
+{% assign prev_author = "" %}
+{% assign current_author = "" %}
+
+
+    {% for poem in sort_poem_by_title %}
+        {% if prev_author == "" %}
+            {% assign prev_author = poem.poem_author %}
+            <h2> {{poem.poem_author}} </h2>
+            <ul>
+        {% else %}
+            {% assign current_author = poem.poem_author %}
+            {% if current_author != prev_author %}
+                </ul>
+                <h2> {{poem.poem_author}} </h2>
+                {% assign prev_author = poem.poem_author %}
+                <ul>
+            {% endif %}
+        {% endif %}
+
+            {% assign link = "/poem/" | append: poem.title %}
+            <li><a href={{link}}>{{ poem.poem_title }}</a></li>
+    {% endfor %}
+</ul>
+
+<!--
+{%- for poem in site.poemslist %}
+<p> {{ poem.poem_author }} </p>
+
+{%- endfor -%}-->
