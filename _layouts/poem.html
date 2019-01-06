@@ -150,10 +150,10 @@ date:   2018-12-16 17:47:16 -0600
         '{% assign formID = page.title | append: "-answer" %}'
         text.innerHTML = '<h3> Now, choose the correct type of turn </h3>';
         text.innerHTML += '<form id="{{formID}}" onsubmit="return false">'  +
-            '<input type="radio" name="choice" value="Retrospective-prospective" checked>' + answer_choices[0] + '<br>' +
-            '<input type="radio" name="choice" value="Descriptive-meditative">' + answer_choices[1] + '<br>' +
-            '<input type="radio" name="choice" value="Cliche-and-critique">' + answer_choices[2] + '<br>' +
-            '<input type="radio" name="choice" value="Mid-course turn">' + answer_choices[3] +'<br><br>' +
+            '<input type="radio" name="choice" value=' + answer_choices[0] + ' checked>' + answer_choices[0] + '<br>' +
+            '<input type="radio" name="choice" value=' + answer_choices[1] + ' >' + answer_choices[1] + '<br>' +
+            '<input type="radio" name="choice" value=' + answer_choices[2] + ' >' + answer_choices[2] + '<br>' +
+            '<input type="radio" name="choice" value=' + answer_choices[3] + ' >' + answer_choices[3] +'<br><br>' +
             '<input type="submit" onclick="doSubmit()"><br><br>' +
             '</form> ';
 

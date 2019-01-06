@@ -1,0 +1,35 @@
+---
+layout: poem
+permalink: /poems/sort/difficulty
+---
+{% assign difficulty = "Easy, Moderate, Hard" | split: ", " %}
+
+{% for level in difficulty %}
+    {% assign poems = site.poemslist | where: "difficulty", level %}
+
+    {% if poems.size != 0 %}
+    <h3>{{level}} Poems: </h3>
+    <ul>
+        {% for poem in poems %}
+        {% assign link = "/poem/" | append: poem.title %}
+        <li><a href={{link}}>{{ poem.poem_title }}</a>  by {{ poem.poem_author }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+{% endfor %}
+
+
+
+<!--{% assign easy = site.poemslist | where: "difficulty", "Easy" %}
+{% assign moderate = site.poemslist | where: "difficulty", "moderate" %}-->
+
+<!--{% if easy %}
+<h3>Easy Poems: </h3>
+<ul>
+    {% for poem in easy %}
+    {% assign link = "/poem/" | append: poem.title %}
+    <li><a href={{link}}>{{ poem.poem_title }}</a>  by {{ poem.poem_author }}</li>
+    {% endfor %}
+</ul>
+{% endif %}-->
