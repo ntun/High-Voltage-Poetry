@@ -1,7 +1,6 @@
 ---
 layout: poem
 ---
-
 <!--{% if x == "a" %}
 <p>{{ page.previous.url }}</p>
 {% else %}
@@ -11,8 +10,19 @@ layout: poem
 {% endfor %}
 {% endif %}-->
 
-<h2> {{ page.poem_title }} </h2>
-<h4> by {{ page.poem_author}} </h4>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<h2 style="float: left;">{{ page.poem_title }}</h2>
+
+<div class="dropdown" style="float: right;">
+    <span onclick="dropDown()" class="dropbtn fa fa-info-circle fa_custom fa-2x" style="float: right;"></span>
+    <br>
+    <div id="myDropdown" class="dropdown-content">
+        Click on the word where the turn occurs, or, if the turn occurs between words, on the word immediately after the turn. For more detailed instructions, go to Instructions
+    </div>
+</div>
+
+<h4 style="clear: left;"> by {{ page.poem_author}} </h4>
 
 <div class="poems">{{page.poem_text | newline_to_br }}</div>
 

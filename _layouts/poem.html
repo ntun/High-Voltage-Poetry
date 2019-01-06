@@ -10,7 +10,56 @@ date:   2018-12-16 17:47:16 -0600
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
+<style>
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #f9f9f9;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+/*    .dropdown:hover .dropdown-content {display: block;}
+    .dropdown:hover .dropbtn {background-color: #3e8e41;}*/
+</style>
+
 <script>
+
+    /* Dropdown function source:
+        https://www.w3schools.com/howto/howto_js_dropdown.asp
+     */
+
+    function dropDown() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
 
     function doSubmit() {
         '{% assign ansID = page.title | append: "-answer" %}'
@@ -107,7 +156,7 @@ date:   2018-12-16 17:47:16 -0600
             "                <h4 class=\"modal-title\">{{page.poem_title}} by {{page.poem_author}}</h4>\n" +
             "            </div>\n" +
             "            <div class=\"modal-body\">\n" +
-            "                <p>Sorry, it's not a turn. Try again.</p>\n" +
+            "                <p>Incorrect. Please try again.</p>\n" +
             "            </div>\n" +
             "            <div class=\"modal-footer\">\n" +
             "                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
@@ -131,7 +180,8 @@ date:   2018-12-16 17:47:16 -0600
             "                <h4 class=\"modal-title\">{{page.poem_title}} by {{page.poem_author}}</h4>\n" +
             "            </div>\n" +
             "            <div class=\"modal-body\">\n" +
-            "                <p>Congratulations! It's a turn.</p>\n" +
+            "                <p>Correct! Congratulations! Now, please identify the kind of turn at" +
+            "                   work in this poem.</p>\n" +
             "            </div>\n" +
             "            <div class=\"modal-footer\">\n" +
             "                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
@@ -148,7 +198,8 @@ date:   2018-12-16 17:47:16 -0600
 
         var text = document.getElementById('{{ page.title }}');
         '{% assign formID = page.title | append: "-answer" %}'
-        text.innerHTML = '<h3> Now, choose the correct type of turn </h3>';
+        text.innerHTML = '<h3> Correct! Congratulations! ' +
+            'Now, please identify the kind of turn at work in this poem: </h3>';
         text.innerHTML += '<form id="{{formID}}" onsubmit="return false">'  +
             '<input type="radio" name="choice" value=' + answer_choices[0] + ' checked>' + answer_choices[0] + '<br>' +
             '<input type="radio" name="choice" value=' + answer_choices[1] + ' >' + answer_choices[1] + '<br>' +
