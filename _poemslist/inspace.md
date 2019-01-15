@@ -59,5 +59,4 @@ correct_text:  >
  another layer of meaning, and redefines those prior lines as symbolic language.
  
 layout: each_poem
-permalink: /poem/:title
 ---

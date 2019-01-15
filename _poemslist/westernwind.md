@@ -40,5 +40,4 @@ correct_text:  >
  mid-course turns. 
  
 layout: each_poem
-permalink: /poem/:title
 ---

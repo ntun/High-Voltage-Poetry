@@ -10,8 +10,7 @@ layout: default
     <h3>{{level}} Poems: </h3>
     <ul>
         {% for poem in poems %}
-        {% assign link = "/poem/" | append: poem.title %}
-        <li><a href={{link}}>{{ poem.poem_title }}</a>  by {{ poem.poem_author }}</li>
+        <li><a href="{{site.baseurl}}/poem/{{poem.title}}">{{ poem.poem_title }}</a> by {{ poem.poem_author }}</li>
         {% endfor %}
     </ul>
     {% endif %}

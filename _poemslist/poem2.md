@@ -15,6 +15,5 @@ types_incorrect:
 correct_text: >
  yes
 
-permalink: /poem/:title
 layout: each_poem
 ---

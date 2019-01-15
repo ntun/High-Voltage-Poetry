@@ -68,5 +68,4 @@ correct_text:  >
  feeling only / Then why I let the waves bring my body in—.”
  
 layout: each_poem
-permalink: /poem/:title
 ---

@@ -17,6 +17,5 @@ correct_text: >
 
 categories: "a"
 
-permalink: /poem/:title
 layout: each_poem
 ---

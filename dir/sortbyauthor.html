@@ -21,8 +21,7 @@ layout: default
             {% endif %}
         {% endif %}
 
-            {% assign link = "/poem/" | append: poem.title %}
-            <li><a href={{link}}>{{ poem.poem_title }}</a></li>
+            <li><a href="{{site.baseurl}}/poem/{{poem.title}}">{{ poem.poem_title }}</a></li>
     {% endfor %}
 </ul>
 

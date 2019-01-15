@@ -52,5 +52,4 @@ correct_text:  >
  concerns of a prayerful, repentant narrator.
 
 layout: each_poem
-permalink: /poem/:title
 ---

@@ -51,6 +51,5 @@ correct_text:  >
  brought me there, brought you.”
  
 layout: each_poem
-permalink: /poem/:title
 
 ---

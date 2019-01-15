@@ -54,5 +54,4 @@ correct_text:  >
  mid-course turn is unmistakably demonstrated.
  
 layout: each_poem
-permalink: /poem/:title
 ---
