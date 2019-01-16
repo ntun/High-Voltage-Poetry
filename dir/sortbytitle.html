@@ -6,7 +6,7 @@ layout: default
 <h3> Poems sorted by title in ascending order alphabetically:</h3>
 <ul>
 {% for poem in sort_poem_by_title %}
-    <li><a href="{{site.baseurl}}/poemslist/{{poem.title}}">{{ poem.poem_title }}</a> by {{ poem.poem_author }}</li>
+    <li><a href="{{site.baseurl}}/{{poem.url}}">{{ poem.poem_title }}</a> by {{ poem.poem_author }}</li>
 {% endfor %}
 </ul>
 
