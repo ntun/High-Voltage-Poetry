@@ -1,5 +1,5 @@
 ---
-title: About
+title: about
 ---
 
 Edit description in `about.md` file.
