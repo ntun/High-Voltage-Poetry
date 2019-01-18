@@ -23,7 +23,7 @@
     {%- if page_paths -%}
         {%- for path in page_paths -%}
             {% if path.title %}
-            <a href="{{site.baseurl}}/{{path.title}}" class="btn">{{path.title}}</a>
+            <a href="{{site.baseurl}}/{{path.title | downcase}}" class="btn">{{path.title}}</a>
             {% endif %}
         {%- endfor -%}
     {%- endif -%}

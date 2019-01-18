@@ -1,5 +1,5 @@
 ---
-title: poems
+title: Poems
 ---
 
 Show list of poems by
