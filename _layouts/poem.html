@@ -3,12 +3,6 @@ layout: default
 title:  "example poem!"
 date:   2018-12-16 17:47:16 -0600
 ---
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
 
 <style>
     .dropdown {
@@ -33,6 +27,7 @@ date:   2018-12-16 17:47:16 -0600
         display: block;
     }
 
+    .show {display: block;}
 /*    .dropdown:hover .dropdown-content {display: block;}
     .dropdown:hover .dropbtn {background-color: #3e8e41;}*/
 </style>
@@ -68,26 +63,7 @@ date:   2018-12-16 17:47:16 -0600
         if (answer.choice.value.toString() === '{{ page.type_correct }}') {
             //alert("correct");
             //var x = document.getElementById('{{ page.title }}');
-            var x = document.getElementById("myModal2");
-            var y = "    <div class=\"modal-dialog\">\n" +
-                "\n" +
-                "        <!-- Modal content-->\n" +
-                "        <div class=\"modal-content\">\n" +
-                "            <div class=\"modal-header\">\n" +
-                "                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n" +
-                "                <h4 class=\"modal-title\">{{page.poem_title}} by {{page.poem_author}}</h4>\n" +
-                "            </div>\n" +
-                "            <div class=\"modal-body\">\n" +
-                "                <p>Correct! Congratulation!</p>\n" +
-                "            </div>\n" +
-                "            <div class=\"modal-footer\">\n" +
-                "                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
-                "            </div>\n" +
-                "        </div>\n" +
-                "\n" +
-                "    </div>";
-            x.innerHTML = y;
-            $('#myModal2').modal('show');
+            $('#correct-modal').modal('show');
 
             document.getElementById("correct_text").style.display = "block";
             document.getElementById('correct_text').scrollIntoView();
@@ -108,27 +84,7 @@ date:   2018-12-16 17:47:16 -0600
         }
 
         else {
-            //alert("incorrect");
-            var x = document.getElementById("myModal2");
-            var y = "    <div class=\"modal-dialog\">\n" +
-                "\n" +
-                "        <!-- Modal content-->\n" +
-                "        <div class=\"modal-content\">\n" +
-                "            <div class=\"modal-header\">\n" +
-                "                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n" +
-                "                <h4 class=\"modal-title\">{{page.poem_title}} by {{page.poem_author}}</h4>\n" +
-                "            </div>\n" +
-                "            <div class=\"modal-body\">\n" +
-                "                <p>Incorrect. Please try again.</p>\n" +
-                "            </div>\n" +
-                "            <div class=\"modal-footer\">\n" +
-                "                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
-                "            </div>\n" +
-                "        </div>\n" +
-                "\n" +
-                "    </div>";
-            x.innerHTML = y;
-            $('#myModal2').modal('show');
+            $('#notturn-modal').modal('show');
         }
     }
 
@@ -144,53 +100,12 @@ date:   2018-12-16 17:47:16 -0600
         //alert(arr);
         shuffleArray(arr);
         alert(arr);*/
-
-        var x = document.getElementById("myModal1");
-
-        var y = "    <div class=\"modal-dialog\">\n" +
-            "\n" +
-            "        <!-- Modal content-->\n" +
-            "        <div class=\"modal-content\">\n" +
-            "            <div class=\"modal-header\">\n" +
-            "                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n" +
-            "                <h4 class=\"modal-title\">{{page.poem_title}} by {{page.poem_author}}</h4>\n" +
-            "            </div>\n" +
-            "            <div class=\"modal-body\">\n" +
-            "                <p>Incorrect. Please try again.</p>\n" +
-            "            </div>\n" +
-            "            <div class=\"modal-footer\">\n" +
-            "                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
-            "            </div>\n" +
-            "        </div>\n" +
-            "\n" +
-            "    </div>";
-        x.innerHTML = y;
-        $('#myModal1').modal('show');
+        $('#notturn-modal').modal('show');
     }
 
     function turnFunc() {
         // alert("a turn");
-        var x = document.getElementById("myModal1");
-        var y = "    <div class=\"modal-dialog\">\n" +
-            "\n" +
-            "        <!-- Modal content-->\n" +
-            "        <div class=\"modal-content\">\n" +
-            "            <div class=\"modal-header\">\n" +
-            "                <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\n" +
-            "                <h4 class=\"modal-title\">{{page.poem_title}} by {{page.poem_author}}</h4>\n" +
-            "            </div>\n" +
-            "            <div class=\"modal-body\">\n" +
-            "                <p>Correct! Congratulations! Now, please identify the kind of turn at" +
-            "                   work in this poem.</p>\n" +
-            "            </div>\n" +
-            "            <div class=\"modal-footer\">\n" +
-            "                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>\n" +
-            "            </div>\n" +
-            "        </div>\n" +
-            "\n" +
-            "    </div>";
-        x.innerHTML = y;
-        $('#myModal1').modal('show');
+        $('#turn-modal').modal('show');
 
         var answer_choices = ["{{ page.types_incorrect[0] }}", "{{ page.types_incorrect[1] }}",
             "{{ page.types_incorrect[2]}}", "{{ page.type_correct }}"];
@@ -235,8 +150,8 @@ date:   2018-12-16 17:47:16 -0600
     // enable closing modal window with ESC key
     $(document).keydown(function(event) {
         if (event.keyCode == 27) {
-            $('#myModal1').modal('hide');
-            $('#myModal2').modal('hide');
+            $('#notturn-modal').modal('hide');
+            $('#turn-modal').modal('hide');
         }
     });
 </script>
