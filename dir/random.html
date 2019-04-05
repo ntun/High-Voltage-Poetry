@@ -1,0 +1,19 @@
+---
+layout: poem
+---
+<script type="text/javascript">
+    function random_item(items)
+    {
+
+        return items[Math.floor(Math.random()*items.length)];
+
+    }
+
+    '{% assign URL = site.poemslist %}'
+    var arr = [];
+
+    '{% for poem in URL %}'
+        arr.push("{{poem.url}}");
+    '{% endfor %}'
+    window.location.replace('{{site.baseurl}}'+random_item(arr));
+</script>
