@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
 <section class="page-header">
@@ -19,15 +21,18 @@
         <a href="{{site.baseurl}}/" style="color:white;">{{ site.title | default: site.github.repository_name }}</a></h1>
     <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
 
-    {%- assign page_paths = site.pages | default: default_paths -%}
+<!--    {%- assign page_paths = site.pages | default: default_paths -%}
     {%- if page_paths -%}
         {%- for path in page_paths -%}
             {% if path.title %}
             <a href="{{site.baseurl}}/{{path.title | downcase}}" class="btn">{{path.title}}</a>
             {% endif %}
         {%- endfor -%}
-    {%- endif -%}
-
+    {%- endif -%}-->
+    <a href="{{site.baseurl}}/about" class="btn">About</a>
+    <a href="{{site.baseurl}}/instructions" class="btn">Instructions</a>
+    <a href="{{site.baseurl}}/poems" class="btn">Poems</a>
+    <a href="{{site.baseurl}}/citations" class="btn">Citations</a>
 </section>
 
 <section class="main-content">
