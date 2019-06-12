@@ -46,7 +46,7 @@ Once you’ve made the correct selection, you will be provided with a paragraph 
 Then, select another poem, and play on!
 
 
-#### Types of Turn
+<h4 id="types">Types of Turn</h4>
 
 The following is a list of types of turns featured on this website, along with a brief description of each type. If you wish to learn more about these turns, click on the links provided.
  
