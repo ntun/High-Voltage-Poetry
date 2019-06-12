@@ -4,7 +4,7 @@ title: Instructions
 
 Add some instructions in `instructions.md` file
 
-**Before Playing**
+#### Before Playing
 
 If, before you begin to explore and engage the poems on this site, you wish to more fully acquaint yourself with poetic turns—especially how to locate and describe them—familiarize yourself with the >“Types of Turns”< on which this site focuses. Read the descriptions of the kinds of turns, of course, but also click the links to examine some examples of the various kinds of turns. See if you can spot the kinds of turns being described. 
 
@@ -12,7 +12,7 @@ The links on >Types of Turns< take you to particular pages on the [“Structure 
 
 Additional resources that for the poetic turn include [Structure & Surprise: Engaging Poetic Turns](https://www.amazon.com/Structure-Surprise-Engaging-Poetic-Turns/dp/0915924277) (the inspiration for the “Structure and Surprise” website) and [“Voltage Poetry”](https://voltagepoetry.com/).
 
-**Select a Poem**
+#### Select a Poem
 
 You can select a poem a number of ways:
 * **Title**: Select from an alphabetical list of poem titles.
@@ -35,7 +35,7 @@ Random
 
 Surprise yourself!
 
-**Identify the Turn**
+#### Identify the Turn
 
 After you’ve found the location of the turn, you will be asked to identify the kind of turn operating in the poem from among four choices. Though turns often can be described in a variety of ways, only one answer of the four options will be correct.
 
@@ -46,7 +46,7 @@ Once you’ve made the correct selection, you will be provided with a paragraph 
 Then, select another poem, and play on!
 
 
-**Types of Turn**
+#### Types of Turn
 
 The following is a list of types of turns featured on this website, along with a brief description of each type. If you wish to learn more about these turns, click on the links provided.
  

@@ -1,3 +1,4 @@
+<!-- This file contains layouts and functionality (including CSS and Javascript) of each poem -->
 ---
 layout: default
 title:  "example poem!"
@@ -28,8 +29,6 @@ date:   2018-12-16 17:47:16 -0600
     }
 
     .show {display: block;}
-/*    .dropdown:hover .dropdown-content {display: block;}
-    .dropdown:hover .dropbtn {background-color: #3e8e41;}*/
 </style>
 
 <script>
@@ -68,19 +67,6 @@ date:   2018-12-16 17:47:16 -0600
             document.getElementById("correct_text").style.display = "block";
             document.getElementById('correct_text').scrollIntoView();
 
-            //window.location.href = "./#correct_text";
-
-            //var correct_explanation = document.getElementById("correct_text").childNodes[0].nodeValue;
-            //var y = "<p>" + correct_explanation + "</p>";
-            //x.insertAdjacentHTML("afterend", y)
-
-            /*            //var text = '{{page.correct_text }}';
-                        //console.log(text);
-                        //x.insertAdjacentHTML("afterend", text);
-                        var node = document.createElement("DIV");
-                        var textnode = document.createTextNode('{{ page.correct_text }}');
-                        node.appendChild(textnode);
-                        answer.parentNode.parentNode.appendChild(node);*/
         }
 
         else {
@@ -95,16 +81,10 @@ date:   2018-12-16 17:47:16 -0600
         }
     }
     function notTurnFunc() {
-        //alert("Not a turn");
-       /* var arr = ["{{ page.types_incorrect[0] }}", "{{ page.types_incorrect[1] }}", "{{ page.types_incorrect[2]}}"];
-        //alert(arr);
-        shuffleArray(arr);
-        alert(arr);*/
         $('#notturn-modal').modal('show');
     }
 
     function turnFunc() {
-        // alert("a turn");
         $('#turn-modal').modal('show');
 
         var answer_choices = ["{{ page.types_incorrect[0] }}", "{{ page.types_incorrect[1] }}",
