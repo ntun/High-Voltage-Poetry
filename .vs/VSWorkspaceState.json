@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\_layouts",
-    "\\_poemslist"
+    "\\_poemslist",
+    "\\_posts"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\_layouts\\poem.html",
   "PreviewInSolutionExplorer": false
 }

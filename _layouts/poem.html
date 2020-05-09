@@ -1,9 +1,9 @@
-<!-- This file contains layouts and functionality (including CSS and Javascript) of each poem -->
 ---
 layout: default
 title:  "example poem!"
 date:   2018-12-16 17:47:16 -0600
 ---
+<!-- This file contains layouts and functionality (including CSS and Javascript) of each poem -->
 
 <style>
     .dropdown {
@@ -21,14 +21,16 @@ date:   2018-12-16 17:47:16 -0600
         z-index: 1;
     }
 
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+    .show {
         display: block;
     }
-
-    .show {display: block;}
 </style>
 
 <script>
@@ -60,8 +62,6 @@ date:   2018-12-16 17:47:16 -0600
         var answer = document.getElementById('{{ ansID }}');
 
         if (answer.choice.value.toString() === '{{ page.type_correct }}') {
-            //alert("correct");
-            //var x = document.getElementById('{{ page.title }}');
             $('#correct-modal').modal('show');
 
             document.getElementById("correct_text").style.display = "block";
@@ -74,17 +74,17 @@ date:   2018-12-16 17:47:16 -0600
         }
     }
 
-    function shuffleArray(array) {
+    function shuffleArray(array) { // to randomly shuffle the answer choices (atter correctly identifying the turn)
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
         }
     }
-    function notTurnFunc() {
+    function notTurnFunc() { // upon clicking a non-turn word
         $('#notturn-modal').modal('show');
     }
 
-    function turnFunc() {
+    function turnFunc() { // upon clicking the correct turn word
         $('#turn-modal').modal('show');
 
         var answer_choices = ["{{ page.types_incorrect[0] }}", "{{ page.types_incorrect[1] }}",
@@ -105,10 +105,10 @@ date:   2018-12-16 17:47:16 -0600
 
         document.getElementById('{{page.title}}').scrollIntoView();
 
-        //window.location.href = "/poem/{{page.title}}/#{{ page.title }}";
-
     }
 
+    // Wrap each word with a <span> tag,
+    // except for a turn word, which is wrapped with <turn> tag.
     $(document).ready(function() {
         $(".poems")
             .contents()
